@@ -1,0 +1,18 @@
+{
+  "version": "0.2",
+  "ignorePaths": [
+    "node_modules/**"
+  ],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "Nwokotubo",
+    "networkidle",
+    "domcontentloaded",
+    "auditboard",
+    "PWDEBUG"
+  ],
+  "ignoreWords": [],
+  "import": [],
+  "enabled": true
+}
