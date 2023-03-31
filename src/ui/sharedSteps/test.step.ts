@@ -30,23 +30,23 @@ export async function stepCheckout(page: Page, userPaymentInfo: ITestPaymentInfo
   });
 
   const checkoutPageOne = new Checkout1Page(page);
-  await test.step("click checkout on cart page", async () => {
+  await test.step("fill payment info and click continue", async () => {
     await checkoutPageOne.fillPaymentInfo(userPaymentInfo);
     await checkoutPageOne.continue();
   });
 
   const checkoutPageTwo = new Checkout2Page(page);
-  await test.step("click checkout on cart page", async () => {
+  await test.step("validate checkout summary and click finish", async () => {
+    // TODO: Validate price, quantity, tax, shipping, payment etc.
     await checkoutPageTwo.finishCheckout();
   });
 }
 
 /**
- * Validates that page contains text in body tag
+ * Validates that page contains text in the body tag
  */
 export async function stepValidateRedirect(page: Page, text: string) {
   await test.step("validate body redirect", async () => {
     await expect(page.locator("body"), `Page does not contain ${text} - possible redirect failure`).toContainText(text);
   });
 }
-

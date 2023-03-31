@@ -1,7 +1,5 @@
 playwright-report
 node_modules
 package-lock.json
-docs
-.circleci/config.yml
 tsconfig.json
 cspell.json

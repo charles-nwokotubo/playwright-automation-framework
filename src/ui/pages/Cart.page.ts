@@ -9,6 +9,7 @@ export class CartPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
+    
     this.btnCheckout = this.page.locator("#checkout");
     this.btnContinueShopping = this.page.locator("#continue-shopping");
   }

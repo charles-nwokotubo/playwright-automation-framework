@@ -1,6 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 import { BasePage } from "src/ui/pages/BasePage";
 
+// TODO: Everything
 export class CartPage extends BasePage {
   url = "/cart.html"
 

@@ -7,7 +7,7 @@ import { ITestData } from "src/ui/@types/testData";
 const testData: ITestData = {
   user: {
     name: "standard_user",
-    password: "secret_sauce"
+    password: process.env.USER_PASSWORD!
   },
   cartItems: [
     {
