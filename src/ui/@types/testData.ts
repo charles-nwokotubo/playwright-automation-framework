@@ -5,9 +5,9 @@
 
 export interface ITestData {
   user: ITestUserCredentials;
-  cartItems: ITestCartItem[];
-  paymentInfo: ITestPaymentInfo;
-  redirectText: string;
+  cartItems?: ITestCartItem[];
+  paymentInfo?: ITestPaymentInfo;
+  confirmationText?: string;
 }
 
 export interface ITestUserCredentials {

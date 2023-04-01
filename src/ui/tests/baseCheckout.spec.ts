@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "src/ui/pages/Login.page";
 import { MainPage } from "src/ui/pages/Main.page";
-import { stepLogin, stepAddItemsToCart, stepCheckout, stepValidateRedirect } from "src/ui/sharedSteps/test.step";
+import { stepLogin, stepAddItemsToCart, stepCheckout, stepValidateConfirmation } from "src/ui/sharedSteps/test.step";
 import { ITestData } from "src/ui/@types/testData";
 
 const testData: ITestData = {
@@ -22,10 +22,10 @@ const testData: ITestData = {
     lastName: "User",
     postalCode: "A1A A1A"
   },
-  redirectText: "Thank you for your order!"
+  confirmationText: "Thank you for your order!"
 }
 
-test("Base Checkout", async ({ page }) => {
+test("Base checkout flow", async ({ page }) => {
   const loginPage = new LoginPage(page);
   await stepLogin(loginPage, testData.user);
 
@@ -34,5 +34,5 @@ test("Base Checkout", async ({ page }) => {
 
   await stepCheckout(page, testData.paymentInfo)
 
-  await stepValidateRedirect(page, testData.redirectText)
+  await stepValidateConfirmation(page, testData.confirmationText)
 });

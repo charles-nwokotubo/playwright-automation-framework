@@ -43,10 +43,10 @@ export async function stepCheckout(page: Page, userPaymentInfo: ITestPaymentInfo
 }
 
 /**
- * Validates that page contains text in the body tag
+ * Validates that page contains the confirmation text in the body tag
  */
-export async function stepValidateRedirect(page: Page, text: string) {
-  await test.step("validate body redirect", async () => {
+export async function stepValidateConfirmation(page: Page, text: string) {
+  await test.step("validate order confirmation", async () => {
     await expect(page.locator("body"), `Page does not contain ${text} - possible redirect failure`).toContainText(text);
   });
 }
