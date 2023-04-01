@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { BasePage } from "src/ui/pages/BasePage";
-import { ITestPaymentInfo } from "src/ui/@types/testData";
+import { ITestBillingInfo } from "src/ui/@types/testData";
 
 export class Checkout1Page extends BasePage {
   url = "/checkout-step-one.html"
@@ -10,6 +10,7 @@ export class Checkout1Page extends BasePage {
   readonly inputPostalCode: Locator;
   readonly btnContinue: Locator;
   readonly btnCancel: Locator;
+  readonly errorMsg: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -19,9 +20,10 @@ export class Checkout1Page extends BasePage {
     this.inputPostalCode = this.page.locator("#postal-code");
     this.btnContinue = this.page.locator("#continue");
     this.btnCancel = this.page.locator("#cancel");
+    this.errorMsg = this.page.locator("[data-test='error']")
   }
 
-  async fillPaymentInfo(info: ITestPaymentInfo) {
+  async fillBillingInfo(info: ITestBillingInfo) {
     await this.inputFirstName.fill(info.firstName);
     await this.inputLastName.fill(info.lastName);
     await this.inputPostalCode.fill(info.postalCode);

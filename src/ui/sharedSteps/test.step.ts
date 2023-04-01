@@ -4,13 +4,20 @@ import { MainPage } from "src/ui/pages/Main.page";
 import { CartPage } from "src/ui/pages/Cart.page";
 import { Checkout1Page } from "src/ui/pages/Checkout1.page";
 import { Checkout2Page } from "src/ui/pages/Checkout2.page";
-import { ITestUserCredentials, ITestCartItem, ITestPaymentInfo } from "src/ui/@types/testData";
+import { ITestUserCredentials, ITestCartItem, ITestBillingInfo } from "src/ui/@types/testData";
 
 
 export async function stepLogin(page: LoginPage, user: ITestUserCredentials) {
   await test.step(`login as ${user.name}`, async () => {
     await page.goto();
     await page.login(user.name, user.password);
+  });
+}
+
+export async function stepLogout(page: MainPage, userName: string) {
+  await test.step(`log out from ${userName}`, async () => {
+    await page.goto();
+    await page.logout();
   });
 }
 
@@ -22,16 +29,18 @@ export async function stepAddItemsToCart(page: MainPage, items: ITestCartItem[])
   } 
 }
 
-export async function stepCheckout(page: Page, userPaymentInfo: ITestPaymentInfo) {
-  const cartPage = new CartPage(page);
-  await test.step("click checkout on cart page", async () => {
-    await cartPage.goto();
-    await cartPage.checkout();
-  });
+export async function stepCheckout(page: Page, userBillingInfo: ITestBillingInfo, opts?: any) {
+  if (!opts?.skipCartPage) {
+    const cartPage = new CartPage(page);
+    await test.step("click checkout on cart page", async () => {
+      await cartPage.goto();
+      await cartPage.checkout();
+    });
+}
 
   const checkoutPageOne = new Checkout1Page(page);
   await test.step("fill payment info and click continue", async () => {
-    await checkoutPageOne.fillPaymentInfo(userPaymentInfo);
+    await checkoutPageOne.fillBillingInfo(userBillingInfo);
     await checkoutPageOne.continue();
   });
 

@@ -10,7 +10,8 @@
     "networkidle",
     "domcontentloaded",
     "auditboard",
-    "PWDEBUG"
+    "PWDEBUG",
+    "onesie"
   ],
   "ignoreWords": [],
   "import": [],

@@ -17,13 +17,13 @@ const testData: ITestData = {
       id: "sauce-labs-backpack"
     }
   ],
-  paymentInfo: {
+  billingInfo: {
     firstName: "Test",
     lastName: "User",
     postalCode: "A1A A1A"
   },
   confirmationText: "Thank you for your order!"
-}
+};
 
 test("Base checkout flow", async ({ page }) => {
   const loginPage = new LoginPage(page);
@@ -32,7 +32,7 @@ test("Base checkout flow", async ({ page }) => {
   const mainPage = new MainPage(page);
   await stepAddItemsToCart(mainPage, testData.cartItems)
 
-  await stepCheckout(page, testData.paymentInfo)
+  await stepCheckout(page, testData.billingInfo)
 
   await stepValidateConfirmation(page, testData.confirmationText)
 });

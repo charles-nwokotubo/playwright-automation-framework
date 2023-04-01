@@ -6,7 +6,7 @@
 export interface ITestData {
   user: ITestUserCredentials;
   cartItems?: ITestCartItem[];
-  paymentInfo?: ITestPaymentInfo;
+  billingInfo?: ITestBillingInfo;
   confirmationText?: string;
 }
 
@@ -22,7 +22,7 @@ export interface ITestCartItem {
   id: string;
 }
 
-export interface ITestPaymentInfo {
+export interface ITestBillingInfo {
   firstName: string;
   lastName: string;
   postalCode: string;
