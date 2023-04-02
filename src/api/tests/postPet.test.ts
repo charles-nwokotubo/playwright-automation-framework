@@ -20,7 +20,6 @@ for (const testCase of testCases) {
   test("POST /v2/pet", async ({ request }) => {
     const response = await request.post("/v2/pet", {data: testCase.body});
     expect(response.ok()).toBeTruthy();
-    console.log(await response.json());
     expect(await response.json()).toEqual(testCase.body);
   });
 }
