@@ -1,33 +1,33 @@
 import { test, expect } from "@playwright/test";
 
+const randomId = Math.floor(Math.random() * 100); 
 const body = {
-  id: 1,
-  category: { id: 1, name: 'string' },
+  id: randomId,
+  category: { id: randomId, name: 'string' },
   name: 'doggie',
   photoUrls: [ 'string' ],
-  tags: [ { id: 1, name: 'string' } ],
+  tags: [ { id: randomId, name: 'test' } ],
   status: 'available'
 };
 
 const testCases = [
   {
-    petId: 1,
+    petId: randomId,
+    putBody: body,
     expectedBody: body,
     expectedResponse: 200
-  },
-  {
-    petId: -999,
-    expectedBody: {
-      code: 1,
-      type: "error",
-      message: "Pet not found"
-    },
-    expectedResponse: 404
   }
 ];
 
 const testData = {
-  postBody: body,
+  postBody: {
+    id: randomId,
+    category: { id: randomId, name: 'string' },
+    name: 'doggie',
+    photoUrls: [ 'string' ],
+    tags: [ { id: randomId, name: 'string' } ],
+    status: 'available'
+  },
   testCases: testCases
 };
 
@@ -38,8 +38,8 @@ test.beforeAll(async ({ request }) => {
 });
 
 for (const testCase of testData.testCases) {
-  test(`GET /v2/pet/${testCase.petId}`, async ({ request }) => {
-    const response = await request.get(`/v2/pet/${testCase.petId}`);
+  test("PUT /v2/pet", async ({ request }) => {
+    const response = await request.put("/v2/pet", {data: testCase.putBody});
     expect(response.status()).toEqual(testCase.expectedResponse);
     expect(await response.json()).toEqual(testCase.expectedBody);
   });
