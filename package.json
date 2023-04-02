@@ -5,7 +5,7 @@
   "scripts": {
     "test": "npx playwright test",
     "test-inspect": "npx cross-env PWDEBUG=1 npx playwright test --reporter=line --timeout=150000",
-    "test-debug": "npx cross-env PWDEBUG=console npx playwright test "
+    "test-debug": "npx cross-env PWDEBUG=console npx playwright test"
   },
   "repository": {
     "type": "git",

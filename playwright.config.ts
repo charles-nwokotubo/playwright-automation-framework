@@ -11,7 +11,7 @@ import "dotenv/config";
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './src/ui/tests',
+  testDir: './src',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -26,6 +26,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
+    // baseURL: 'https://petstore.swagger.io/v2',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -34,8 +35,25 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'UI Tests - Chromium',
+      testMatch: '**/*.spec.ts',
       use: { ...devices['Desktop Chrome'] },
+    },
+
+    {
+      name: 'API Tests',
+      testMatch: '**/*.test.ts',
+      use: {
+        // All requests we send go to this API endpoint.
+        baseURL: 'https://petstore.swagger.io',
+        extraHTTPHeaders: {
+          // We set this header per GitHub guidelines.
+          'Accept': 'application/json',
+          // Add authorization token to all requests.
+          // Assuming personal access token available in the environment.
+          // 'Authorization': "special-key",
+        },
+      }
     },
 
     // {
