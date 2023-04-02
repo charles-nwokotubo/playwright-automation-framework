@@ -1,9 +1,9 @@
 # UI & API Tests for Swagger Labs
 
-[![GitHubActions](https://github.com/charles-nwokotubo/auditboard-take-home/actions)
+[![Status](https://github.com/charles-nwokotubo/auditboard-take-home/actions/workflows/playwright.yml)
 
-API Tests - https://petstore.swagger.io/
-UI Tests - https://www.saucedemo.com/
+- API Tests - https://petstore.swagger.io/
+- UI Tests - https://www.saucedemo.com/
 
 ## Install
 
