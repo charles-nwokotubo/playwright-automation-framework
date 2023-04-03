@@ -33,7 +33,7 @@ npm run test-inspect <path-to.spec.ts>
 
 ## Debug
 
-If using VS Code, you can just press `F5` to launch built in debugger. Or use `test-debug` and `test-inspect` scripts.
+If using VS Code, you can just press `F5` to launch the built-in debugger. You can also use the `test-debug` and `test-inspect` scripts for debugging.
 
 ## Visual Comparisons
 
