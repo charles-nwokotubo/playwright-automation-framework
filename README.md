@@ -22,7 +22,7 @@ npx playwright install
 npm test
 
 # Run test in headless mode
-npm run test <path-to.spec.ts>
+npm test <path-to.spec.ts>
 
 # Run test in headed mode
 npm run test-debug <path-to.spec.ts>
