@@ -2,11 +2,11 @@ import { test, expect } from "@playwright/test";
 
 const testCases = [
   {
-    petId: 10,
+    petId: 9999,
     expectedBody: {
       code: 200,
       type: "unknown",
-      message: "10"
+      message: "9999"
     },
     expectedResponse: 200,
     expectedGetResponse: 404
@@ -19,11 +19,11 @@ const testCases = [
 
 const testData = {
   postBody: {
-    id: 10,
-    category: { id: 10, name: 'string' },
+    id: 9999,
+    category: { id: 9999, name: 'string' },
     name: 'testPet',
     photoUrls: [ 'string' ],
-    tags: [ { id: 10, name: 'string' } ],
+    tags: [ { id: 9999, name: 'string' } ],
     status: 'available'
   },
   testCases: testCases
