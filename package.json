@@ -1,5 +1,5 @@
 {
-  "name": "auditboard-take-home",
+  "name": "playwright-automation-framework",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/charles-nwokotubo/auditboard-take-home.git"
+    "url": "git+https://github.com/charles-nwokotubo/playwright-automation-framework.git"
   },
   "author": "Charles Nwokotubo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/charles-nwokotubo/auditboard-take-home/issues"
+    "url": "https://github.com/charles-nwokotubo/playwright-automation-framework/issues"
   },
-  "homepage": "https://github.com/charles-nwokotubo/auditboard-take-home#readme",
+  "homepage": "https://github.com/charles-nwokotubo/playwright-automation-framework#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
     "eslint": "^8.37.0",

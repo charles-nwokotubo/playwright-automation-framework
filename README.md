@@ -1,6 +1,6 @@
 # UI & API Tests for Swagger Labs
 
-[![Playwright Tests](https://github.com/charles-nwokotubo/auditboard-take-home/actions/workflows/playwright.yml/badge.svg)](https://github.com/charles-nwokotubo/auditboard-take-home/actions/workflows/playwright.yml)
+[![Playwright Tests](https://github.com/charles-nwokotubo/playwright-automation-framework/actions/workflows/playwright.yml/badge.svg)](https://github.com/charles-nwokotubo/playwright-automation-framework/actions/workflows/playwright.yml)
 
 - API Tests - https://petstore.swagger.io/
 - UI Tests - https://www.saucedemo.com/
