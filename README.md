@@ -50,7 +50,6 @@ npx playwright test --update-snapshots
 ## Additional scripts
 
 ```bash
-
 # launch playwright report
 npx run report
 
