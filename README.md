@@ -1,4 +1,4 @@
-# UI & API Tests for Swagger Labs
+# Playwright Automation Framework
 
 [![Playwright Tests](https://github.com/charles-nwokotubo/playwright-automation-framework/actions/workflows/playwright.yml/badge.svg)](https://github.com/charles-nwokotubo/playwright-automation-framework/actions/workflows/playwright.yml)
 
@@ -8,26 +8,26 @@
 ## Install
 
 ```bash
-# install npm packages
+# Install npm packages
 npm install
 
-# install playwright
+# Install Playwright
 npx playwright install
 ```
 
 ## Run tests
 
 ```bash
-# run all tests
+# Run all tests
 npm test
 
-# run test in headless mode
-npm test <path-to.spec.ts>
+# Run test in headless mode
+npm run test <path-to.spec.ts>
 
-# run test in headed mode
+# Run test in headed mode
 npm run test-debug <path-to.spec.ts>
 
-# run test with playwright inspector
+# Run test with playwright inspector
 npm run test-inspect <path-to.spec.ts>
 ```
 
@@ -50,8 +50,8 @@ npx playwright test --update-snapshots
 ## Additional scripts
 
 ```bash
-# launch playwright report
+# Launch playwright report
 npx run report
 
-# build and lint the code
+# Build and lint the code
 npm run build
