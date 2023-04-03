@@ -37,7 +37,7 @@ If using VS Code, you can just press `F5` to launch the built-in debugger. You c
 
 ## Visual Comparisons
 
-To update snapshots you will need to run `--update-snapshots` within Docker so that the snapshots are updated inside an ephemeral environment.
+To update snapshots, you will need to run `--update-snapshots` via Docker so that the snapshots are updated within an ephemeral environment.
 
 To run in Docker:
 
